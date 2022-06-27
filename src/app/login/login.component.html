@@ -47,6 +47,7 @@
     [class.is-invalid]="password.invalid && password.touched"  name="password" [(ngModel)]="userModel.password" >
     <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required</small>
   </div>
+     <input type="button" value="Register" (click)="userdata()">
 
   </form>
 </div>
