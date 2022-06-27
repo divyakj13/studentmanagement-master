@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Add</h1>
+    <form #userForm="ngForm">
+ 
+    
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" #date="ngModel" class="form-control" [class.is-invalid]="date.invalid && date.touched" name="date" [(ngModel)]="userList.date" required> 
+        <small class="text-danger" [class.d-none]="date.valid || date.untouched">date is required</small>
+      </div>
+    
+  
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" #descrip="ngModel" class="form-control" required [class.is-invalid]="descrip.invalid && descrip.touched"  name="descrip" [(ngModel)]="userList.descrip" >
+        <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is invalid</small> -->
+      </div>
+      
+      <button (click)="backButton()" type="submit" class="btn btn-primary">Back</button>
+      <button [disabled]="userForm.form.invalid" id="submit" (click)="tableDisplay()" type="submit"  class="btn btn-primary" >{{userList.id==0||userList.id==null ?'Submit':'Update'}}</button>
+   </form>
+  </div>
