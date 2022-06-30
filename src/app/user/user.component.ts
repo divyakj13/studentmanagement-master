@@ -1,9 +1,10 @@
 import { LoginService } from '../login.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgForm} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RoleService } from '../role.service';
 import { User1 } from './user';
+
 
 @Component({
   selector: 'app-user',
@@ -14,22 +15,18 @@ export class UserComponent implements OnInit {
 
   userLogin = new User1('Divya', 'Divya@13');
   // roleList: any = ['Admin','User'];
-  roleList: any = ['Admin'];
-  username: string = '';
-  psw: string = '';
+  roleList: string = '';
+  name: string = '';
+ password: string = '';
   // userform: FormGroup;
 
  
 
-
   constructor(private router: Router, private loginService: LoginService,private roleService:RoleService) { }
-  role: string = '';
 
   ngOnInit(): void {
-    this.role=this.roleService.role;
-
-
-    this.roleService.roleValue1=this.role;
+    this.roleService.roleValue1=this.roleList;
+    this.roleList=this.roleService.role;
 
   }
   btnClick(){
@@ -38,12 +35,11 @@ export class UserComponent implements OnInit {
   }
 
   handleClick() {
-    console.log(this.username)
-    console.log(this.userLogin.username)
-    
-
-    if (this.username === this.userLogin.username) {
-      if (this.psw === this.userLogin.password) {
+    console.log("handleClick name : "+this.name)
+    console.log("handleClick name : "+this.userLogin.name)
+  
+    if (this.name === this.userLogin.name) {
+      if (this.password === this.userLogin.password) {
         return true
       }
       else {
@@ -59,12 +55,12 @@ export class UserComponent implements OnInit {
 
 
   display(formData: NgForm) {
-    console.log("user role : "+this.role)
-    console.log("user username : "+this.username)
+    console.log("user role : "+this.roleList)
+    console.log("user name : "+this.name)
     console.log(formData.value);
-    this.roleService.getRole(this.role)
+    this.roleService.getRole(this.roleList)
 
-    if (this.role == "admin") {
+    if (this.roleList == "admin") {
       if (this.handleClick()) {
         console.warn("you are admin");
 

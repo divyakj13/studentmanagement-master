@@ -8,46 +8,56 @@
   
   <div class="form-group">
     <label>Register Number</label>
-    <input type="text" #regNum="ngModel" pattern="/^(\+ACE)[0-9]\d{4}$/" class="form-control" required
-    [class.is-invalid]="regNum.invalid && regNum.touched"  name="regName" [(ngModel)]="userModel.regNum" >
-    <small class="text-danger" [class.d-none]="regNum.invalid || regNum.touched">Register Number is required</small>
+    <input type="text" #regNum="ngModel" class="form-control" required
+    [class.is-invalid]="regNum.invalid && regNum.touched"  name="regNum" [(ngModel)]="userModel.regNum" >
+    <small class="text-danger" [class.d-none]="regNum.valid || regNum.untouched">Register Number is required</small>
   </div>
 
   <div class="form-group">
-    <label class="form-control-label px-3">Phone</label>
-    <input type="tel" #phone="ngModel" pattern="^\d{10}$" class="form-control" required
+    <label>Phone</label>
+    <input type="text" #phone="ngModel" pattern="^\d{10}$" class="form-control" required
     [class.is-invalid]="phone.invalid && phone.touched" name="phone" [(ngModel)]="userModel.phone"> 
-   
-    <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
-      <small class="text-danger" *ngIf="phone.errors['required']">Phone number is required</small>
-      <small class="text-danger" *ngIf="phone.errors['pattern']">Phone number should be 10 digits</small>
+    <div *ngIf="phone.errors && (phone.valid || phone.touched)">
+      <small class="text-danger" [class.d-none]="phone.valid || phone.untouched" *ngIf="phone.errors['required']">Phone number is required</small>
+      <small class="text-danger" [class.d-none]="phone.valid || phone.untouched" *ngIf="phone.errors['pattern']">Phone number should be 10 digits</small>
     </div>
   </div>
 
   <div class="form-group">
-    <label class="form-control-label px-3">Email</label>
+    <label>Email</label>
     <input type="text" #email="ngModel" pattern="([a-zA-Z0-9-_\.]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})(\.[a-zA-Z]{2,5})?$" class="form-control" required
     [class.is-invalid]="email.invalid && email.touched"  name="email" [(ngModel)]="userModel.email" >
     <div *ngIf="email.errors && (email.invalid || email.touched)">
-      <small class="text-danger" *ngIf="email.errors['pattern']">Email is incorrect</small>
-      <small class="text-danger" *ngIf="email.errors['required']">Email is required</small>
+      <small class="text-danger" [class.d-none]="email.valid || email.untouched" *ngIf="email.errors['pattern']">Email is incorrect</small>
+      <small class="text-danger" [class.d-none]="email.valid || email.untouched" *ngIf="email.errors['required']">Email is required</small>
     </div>
   </div><br>
 
   <div class="form-group">
-    <label class="form-control-label px-3">Gender</label><br>
-    <label for="" class="form-control-label px-3"><input type="radio" name="gender" #gender value="male" [(ngModel)]="userModel.gender" required #myGender="ngModel">&nbsp;Male</label>&nbsp;
-    <label for="" class="form-control-label px-3"><input type="radio" name="gender" #gender value="female" [(ngModel)]="userModel.gender" required #myGender="ngModel">&nbsp;Female</label>
+    <label>Gender</label><br>
+    <label for="" class="form-control-label px-3"><input type="radio" name="gender" #gender value="male" [(ngModel)]="userModel.gender" required #Gender="ngModel">&nbsp;Male</label>&nbsp;
+    <label for="" class="form-control-label px-3"><input type="radio" name="gender" #gender value="female" [(ngModel)]="userModel.gender" required #Gender="ngModel">&nbsp;Female</label>
   </div><br>
 
 
     <div class="form-group">
     <label>password</label>
-    <input type="password" #password="ngModel" pattern="^([A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" class="form-control" required
+    <input type="password" #password="ngModel" pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" class="form-control" required
     [class.is-invalid]="password.invalid && password.touched"  name="password" [(ngModel)]="userModel.password" >
     <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required</small>
   </div>
-     <input type="button" value="Register" (click)="userdata()">
+
+  <label>Confirm Password</label>
+              <input type="password" #Confirmpassword="ngModel" pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" class="form-control" required
+              [class.is-invalid]="Confirmpassword.invalid && Confirmpassword.touched" name="Confirmpassword" [(ngModel)]="ConfirmpasswordValue" >
+              <small class="text-danger" [class.d-none]="Confirmpassword.valid || Confirmpassword.untouched">Confirm password is required</small>
+              <small class="text-danger" *ngIf="!conform()"  [class.d-none]="Confirmpassword.valid || Confirmpassword.untouched">Mismatch Password</small>
+              <br><br>
+
+              
+
+
+     <button [disabled]="userForm.form.invalid"  (click)="userdata(userForm)">Register</button>
 
   </form>
 </div>

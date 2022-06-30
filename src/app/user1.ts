@@ -1,10 +1,11 @@
-export class User {
-    id:number=0;
+export class User{
+    _id:number=0;
     username: string='';
     email: string='';
-    phone: number=0;
+    phone: string='';
     gender: string='';
     regNum:string='';
     password:string='';
+    Confirmpassword:string=''
  
 }
