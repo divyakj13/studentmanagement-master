@@ -8,7 +8,18 @@ import { NgForm } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+
+  user3: User={
+    _id: '',
+    username: '',
+    email: '',
+    phone: '',
+    gender: '',
+    regNum: '',
+    password: '',
+    Confirmpassword: ''
+  }
 
   userModel = new User();
   _id: number = 0;
@@ -20,16 +31,16 @@ export class LoginComponent {
     console.log(" ans "+this.userModel.username);
     console.log(" data :"+data);
     console.log("Id : "+this.userModel._id);
-    this.route.params.subscribe(params => {
-      this._id = params['_id'];
-      if (this._id != null) {
-        this.userModel._id=(params['_id']);
-        const data = this.login.getUsersByID(this._id);
-        if (data) {
-          this.userModel=(data);
-        }
-      }
-    });
+    // this.route.params.subscribe(params => {
+    //   this._id = params['_id'];
+    //   if (this._id != null) {
+    //     this.userModel._id=(params['_id']);
+    //     const data = this.login.getUsersByID(this._id);
+    //     if (data) {
+    //       this.userModel=(data);
+    //     }
+    //   }
+    // });
   }
 
   conform(){
@@ -54,17 +65,17 @@ export class LoginComponent {
     })
 
 
-    this.router.navigate(['/']);
-    this.login.setMessage(this.userModel);
-    localStorage.setItem(this.userModel.username, JSON.stringify(this.userModel));
-    if (this.userModel._id === 0) {
-      //Create New User
-      console.log("id : "+this.userModel._id)
-      this.login.setMessage(this.userModel);
-    } else {
-      //Update User info
-      this.login.updateUser(this.userModel);
-  }
+  //   this.router.navigate(['/']);
+  //   this.login.setMessage(this.userModel);
+  //   localStorage.setItem(this.userModel.username, JSON.stringify(this.userModel));
+  //   if (this.userModel._id === 0) {
+  //     //Create New User
+  //     console.log("id : "+this.userModel._id)
+  //     this.login.setMessage(this.userModel);
+  //   } else {
+  //     //Update User info
+  //     this.login.updateUser(this.userModel);
+  // }
   this.router.navigate(['/']);
   }}
 

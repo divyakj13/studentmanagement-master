@@ -1,11 +1,10 @@
 export class User{
-    _id:number=0;
+    _id:string='';
     username: string='';
     email: string='';
     phone: string='';
     gender: string='';
     regNum:string='';
     password:string='';
-    Confirmpassword:string=''
- 
+    Confirmpassword:string='';
 }

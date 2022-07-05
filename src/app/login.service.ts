@@ -10,7 +10,7 @@ export class LoginService {
   
   userLogin=new User1(' ',' ');
   public userList: User[] = [{
-    _id:1,
+    _id:'1',
     username: 'divya',
     email: 'divya@gmail.com',
     gender: 'female',
@@ -35,24 +35,23 @@ constructor(private http:HttpClient){}
 
   }
 
+//   setMessage(user: User){
+//     user._id = this.userList.length+1;
+//     this.userList.push(user);
 
-  setMessage(user: User){
-    user._id = this.userList.length+1;
-    this.userList.push(user);
-
-  }
-  getUsersByName(name : String){
-    this.userList = this.userList.filter(x => x.username != name);
-  }
-  getUsers(){
-    return this.userList
-  }
-  getUsersByID(id: number){
-    return this.userList.find(x => x._id == id)
-  }
-  removeUser(name : String) {
-    this.userList = this.userList.filter(x => x.username != name);
-}
+//   }
+//   getUsersByName(name : String){
+//     this.userList = this.userList.filter(x => x.username != name);
+//   }
+//   getUsers(){
+//     return this.userList
+//   }
+//   getUsersByID(id: number){
+//     return this.userList.find(x => x._id == id)
+//   }
+//   removeUser(name : String) {
+//     this.userList = this.userList.filter(x => x.username != name);
+// }
   loggedIn(){
     return true;
   }
@@ -66,6 +65,8 @@ constructor(private http:HttpClient){}
     const userIndex = this.userList.findIndex(x => x._id == user._id);
     this.userList[userIndex] = user;
   }
+
+  
   public getUser() {
     return this.http.get(this.baseUrl);
   }

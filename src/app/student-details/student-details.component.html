@@ -1,1 +1,28 @@
-<p>student-details works!</p>
+<div class="container">
+    <h1>Student Details</h1>
+    <table class="table">
+        <thead>
+            <th>Student Name</th>
+            <th>Register Number</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let i of user3">
+                <td>{{i.username}}</td>
+                <td>{{i.regNum}}</td>
+                <td>{{i.gender}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.phone}}</td>
+
+                <td>
+                    <!-- <button [hidden]="rolePlay==='false'" class="btn btn-danger mx-3"  (click)="remove(i._id)">Remove</button> -->
+
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

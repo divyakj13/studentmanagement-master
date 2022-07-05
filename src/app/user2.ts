@@ -1,6 +1,5 @@
 export class User2{
-    id:number=0;
+    _id:string='';
     date : string='';
 descrip : string='';
-
 }

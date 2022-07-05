@@ -10,8 +10,10 @@ import { TimetableComponent } from './timetable/timetable.component';
 import { HolidayComponent } from './holiday/holiday.component';
 import { UpdateHolidayComponent } from './update-holiday/update-holiday.component';
 import { PageComponent } from './page/page.component';
+import { FrontpageComponent } from './frontpage/frontpage.component';
 const routes: Routes = [
-  {path:'',component:UserComponent},
+  {path:'',component:FrontpageComponent},
+  {path:'user',component:UserComponent},
   {path:'login',component:LoginComponent},
   {path:'dashboard',component:DashboardComponent},
  {path:'holiday',component:HolidayComponent},
@@ -19,7 +21,7 @@ const routes: Routes = [
   {path:'sidenavbar',component:SidenavbarComponent},
   {path:'app',component:AppComponent},
   {path:'timetable',component:TimetableComponent},
-  {path:'holiday-add/:id',component:UpdateHolidayComponent},
+  {path:'holiday-add/:_id',component:UpdateHolidayComponent},
   {path:'page',component:PageComponent},
   {path:'updateHoliday',component:UpdateHolidayComponent}
 ];

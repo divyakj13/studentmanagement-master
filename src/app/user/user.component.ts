@@ -13,12 +13,11 @@ import { User1 } from './user';
 })
 export class UserComponent implements OnInit {
 
-  userLogin = new User1('Divya', 'Divya@13');
-  // roleList: any = ['Admin','User'];
+  userLogin = new User1('Divya', 'Divya@13');   // roleList: any = ['Admin','User'];
   roleList: string = '';
   name: string = '';
- password: string = '';
-  // userform: FormGroup;
+  password: string = '';
+ 
 
  
 

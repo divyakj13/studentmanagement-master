@@ -8,29 +8,19 @@
             </thead>
             <tbody>
                 <tr *ngFor="let i of userList">
-                    <td>{{i.id}}</td>
+                    <td>{{i._id}}</td>
                     <td>{{i.date}}</td>
                     <td>{{i.descrip}}</td>
-                    <!-- <td>{{i.email}}</td>
-                    <td>{{i.mobile}}</td>                    <td>{{i.mobile}}</td>
-
-                    <td>{{i.topic}}</td> -->
+                   
                         <td>
-                            <button [hidden]="rolePlay==='false'" class="btn btn-info" [routerLink]="['/holiday-add',i.id]" >Edit</button>
-                            <!-- <button class="btn btn-info"><a routerLink="/add/{{i.id}}">Edit</a></button> -->
-                            <button [hidden]="rolePlay==='false'" class="btn btn-danger mx-3"  (click)="remove(i.id)">Remove</button>
+                            <button [hidden]="rolePlay==='false'" class="btn btn-info" [routerLink]="['/holiday-add',i._id]" >Edit</button>
+                            <button [hidden]="rolePlay==='false'" class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button>
                         </td>
-              
-                    <!-- <ng-container #elsecase>
-                        <td>
-                        working
-                      </td>
-                    </ng-container> -->
                 </tr>  
             </tbody>      
     </table>
 
-    <a [routerLink]="['/updateHoliday']" class="btn btn-primary">Add New</a>
+    <button [hidden]="rolePlay==='false'" [routerLink]="['/updateHoliday']" class="add">Add New</button>
 </div>
 
 <p *ngIf="roleName=='admin'">

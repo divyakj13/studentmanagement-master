@@ -1,19 +1,11 @@
-#sucessbox{
-    animation: seconds 1.0s forwards;
-    animation-iteration-count: 1;
-    animation-delay: 3s;
-    position: relative;
-    background: green;
-    color: white;
-    height: 50px;
-    width: 280px;
-}
-  @keyframes seconds {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      left: -9999px; 
-    }
+
+.add{
+  margin-left: 1000px;
+  }
+  .features{
+      border: 2px solid black;
+      margin: 50px;
+  }
+  .back{
+      margin-left: 50px;
   }

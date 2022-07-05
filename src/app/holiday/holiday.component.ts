@@ -15,13 +15,13 @@ export class HolidayComponent implements OnInit {
   userList: User2[] = [];
   editnum: number = 0;
   roleName:string='';
-  loginService: any;
+  // loginService: any;
   rolePlay:string=''
 
   constructor(private listService: ListService,private route: ActivatedRoute, private router: Router, private roleServer:RoleService) { }
 
   ngOnInit(): void {
-    this.userList = this.listService.getUsers();
+    // this.userList = this.listService.getUsers();
     this.roleName=this.roleServer.role;
     console.log("Role name: "+this.roleName);
     if(this.roleName==='admin'){
@@ -31,14 +31,32 @@ export class HolidayComponent implements OnInit {
     else{
       this.rolePlay='false';
     }
+    this.listService.getholiday().subscribe((res)=>{
+      this.userList=res as User2[]
+      console.log(this.userList);
+      
+    });
+  
   }
 
+
   
-  remove(id: number) {
-    alert("Are you sure to remove details?");
-    this.listService.removeUser(id);
-    this.userList = this.listService.getUsers();
+  // remove(id: number) {
+  //   alert("Are you sure to remove details?");
+  //   this.listService.removeUser(id);
+  //   this.userList = this.listService.getUsers();
+  // }
+  
+  delete(_id:string){
+    if (confirm('Are you sure to delete this record ?') == true) {
+      this.listService.deleteHoliday(_id).subscribe((res) => {
+        console.log(res);  
+      });
+      this.listService.getholiday().subscribe((res)=>{
+        this.userList=res as User2[]
+        console.log(JSON.stringify(res));
+      });
+    }
   }
 
 }
-

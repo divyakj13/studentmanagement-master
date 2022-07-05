@@ -14,9 +14,9 @@
         <label>Description</label>
         <input type="text" #descrip="ngModel" class="form-control" required [class.is-invalid]="descrip.invalid && descrip.touched"  name="descrip" [(ngModel)]="userList.descrip" >
         <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is invalid</small> -->
-      </div>
+      </div><br>
       
       <button (click)="backButton()" type="submit" class="btn btn-primary">Back</button>
-      <button [disabled]="userForm.form.invalid" id="submit" (click)="tableDisplay()" type="submit"  class="btn btn-primary" >{{userList.id==0||userList.id==null ?'Submit':'Update'}}</button>
+      <button [disabled]="userForm.form.invalid" id="submit" (click)="tableDisplay(userForm)" type="submit"  class="btn btn-primary" >Submit</button>
    </form>
   </div>
