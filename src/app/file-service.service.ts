@@ -8,16 +8,13 @@ export class FileServiceService {
 
   constructor(private http:HttpClient) { }
 
-  upload(file):Observable<any> {
+  readonly baseUrl='http://localhost:3000/file';
+
+//   upload():Observable<any> {
   
-    // Create form data
-    const formData = new FormData(); 
-      
-    // Store form name as "file" with file data
-    formData.append("file", file, file.name);
-      
-    // Make http post request over api
-    // with formData as req
-    return this.http.post(this.baseApiUrl, formData)
-}
+  
+//     const formData = new FormData(); 
+//     formData.append("file", File, file.name);
+//     return this.http.post(this.baseUrl, formData)
+// }
 }

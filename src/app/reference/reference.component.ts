@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FileServiceService } from '../file-service.service';
 @Component({
   selector: 'app-reference',
   templateUrl: './reference.component.html',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class ReferenceComponent implements OnInit {
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient ,fileservice:FileServiceService) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +28,7 @@ export class ReferenceComponent implements OnInit {
     console.log('file',this.file);
   }
 
-  submitData(){
+ upload(){
     let formData=new FormData();
     formData.set("name",this.name)
     formData.set("file",this.file)
