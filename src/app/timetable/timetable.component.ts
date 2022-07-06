@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-timetable',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimetableComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
   }

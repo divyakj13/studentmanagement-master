@@ -80,8 +80,8 @@ export class UpdateHolidayComponent  implements OnInit {
     this.router.navigate(['/holiday']);
   }
 
-  success() {
+  // success() {
 
-  }
+  // }
 
 }

@@ -17,11 +17,16 @@ export class HolidayComponent implements OnInit {
   roleName:string='';
   // loginService: any;
   rolePlay:string=''
+  // roleVal:string=''
 
   constructor(private listService: ListService,private route: ActivatedRoute, private router: Router, private roleServer:RoleService) { }
 
   ngOnInit(): void {
+    // this.roleVal=this.roleServer.getUserRole;
+    // console.log(this.roleVal);
+    
     // this.userList = this.listService.getUsers();
+
     this.roleName=this.roleServer.role;
     console.log("Role name: "+this.roleName);
     if(this.roleName==='admin'){
@@ -31,6 +36,7 @@ export class HolidayComponent implements OnInit {
     else{
       this.rolePlay='false';
     }
+    
     this.listService.getholiday().subscribe((res)=>{
       this.userList=res as User2[]
       console.log(this.userList);

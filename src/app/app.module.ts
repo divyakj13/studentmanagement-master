@@ -19,6 +19,7 @@ import { HttpClientModule  } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
 import { UpdateHolidayComponent } from './update-holiday/update-holiday.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
+import { ReferenceComponent } from './reference/reference.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
     HolidayComponent,
     UpdateHolidayComponent,
     PageComponent,
-    FrontpageComponent
+    FrontpageComponent,
+    ReferenceComponent
   ],
   imports: [
     BrowserModule,

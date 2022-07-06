@@ -11,10 +11,13 @@
                     <td>{{i._id}}</td>
                     <td>{{i.date}}</td>
                     <td>{{i.descrip}}</td>
-                   
                         <td>
-                            <button [hidden]="rolePlay==='false'" class="btn btn-info" [routerLink]="['/holiday-add',i._id]" >Edit</button>
-                            <button [hidden]="rolePlay==='false'" class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button>
+                            <button [hidden]= "rolePlay==='false'" class="btn btn-info" [routerLink]="['/holiday-add',i._id]" >Edit</button>
+                            <button [hidden]= "rolePlay==='false'" class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button>
+                            <!-- <p *ngIf="roleVal=='admin'">
+                                <button  class="btn btn-info" [routerLink]="['/holiday-add',i._id]" >Edit</button>
+                            <button  class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button>
+                            </p> -->
                         </td>
                 </tr>  
             </tbody>      

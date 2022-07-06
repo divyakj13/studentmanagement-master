@@ -57,6 +57,9 @@ export class UserComponent implements OnInit {
     console.log("user role : "+this.roleList)
     console.log("user name : "+this.name)
     console.log(formData.value);
+    console.log(formData.value.role);
+    this.roleService.setUserRole=formData.value.role
+    
     this.roleService.getRole(this.roleList)
 
     if (this.roleList == "admin") {
@@ -71,4 +74,7 @@ export class UserComponent implements OnInit {
     }
 
   }
+
+
+
 }

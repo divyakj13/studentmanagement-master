@@ -11,6 +11,7 @@ import { HolidayComponent } from './holiday/holiday.component';
 import { UpdateHolidayComponent } from './update-holiday/update-holiday.component';
 import { PageComponent } from './page/page.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
+import { ReferenceComponent } from './reference/reference.component';
 const routes: Routes = [
   {path:'',component:FrontpageComponent},
   {path:'user',component:UserComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'timetable',component:TimetableComponent},
   {path:'holiday-add/:_id',component:UpdateHolidayComponent},
   {path:'page',component:PageComponent},
-  {path:'updateHoliday',component:UpdateHolidayComponent}
+  {path:'updateHoliday',component:UpdateHolidayComponent},
+  {path:'reference',component:ReferenceComponent}
 ];
 
 @NgModule({
