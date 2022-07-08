@@ -1,30 +1,36 @@
-<div class="container mt-1">
-    <h2>Holiday</h2>
-    <table class="table"> 
-            <thead>
-                <th>S.No</th>
-                <th>Date</th>
-                <th>Reason</th>
-            </thead>
-            <tbody>
-                <tr *ngFor="let i of userList">
-                    <td>{{i._id}}</td>
-                    <td>{{i.date}}</td>
-                    <td>{{i.descrip}}</td>
-                        <td>
-                            <button [hidden]= "rolePlay==='false'" class="btn btn-info" [routerLink]="['/holiday-add',i._id]" >Edit</button>
-                            <button [hidden]= "rolePlay==='false'" class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button>
-                            <!-- <p *ngIf="roleVal=='admin'">
+<h2>Holiday</h2>
+<div class="card-product">
+    <table class="table table-striped">
+        <thead>
+            <!-- <th>S.No</th> -->
+            <th>Date</th>
+            <th>Reason</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of userList">
+                <!-- <td>{{i._id}}</td> -->
+                <td>{{i.date}}</td>
+                <td>{{i.descrip}}</td>
+                <td>
+                    <!-- <button [hidden]= "rolePlay==='false'" class="btn btn-info" [routerLink]="['/holiday-add',i._id]" >Edit</button>
+                            <button [hidden]= "rolePlay==='false'" class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button> -->
+
+                    <button class="btn btn-info" [hidden]= "rolePlay==='false'" [routerLink]="['/holiday-add',i._id]">Edit</button>
+                    <button class="btn btn-danger mx-3" [hidden]= "rolePlay==='false'" (click)="delete(i._id)">Remove</button>
+                    <!-- <p *ngIf="roleVal=='admin'">
                                 <button  class="btn btn-info" [routerLink]="['/holiday-add',i._id]" >Edit</button>
                             <button  class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button>
                             </p> -->
-                        </td>
-                </tr>  
-            </tbody>      
+                </td>
+            </tr>
+        </tbody>
     </table>
+   
+    <button [routerLink]="['/updateHoliday']" class="back btn btn-success">Add New</button>
+    <button class="back btn btn-secondary" (click)="back()">Back</button>
 
-    <button [hidden]="rolePlay==='false'" [routerLink]="['/updateHoliday']" class="add">Add New</button>
 </div>
 
+
 <p *ngIf="roleName=='admin'">
-   
+    <!-- <app-page></app-page> -->

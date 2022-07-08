@@ -17,7 +17,8 @@ export class LoginService {
     phone: '9360506366',
     regNum:"ACE1111",
     password:"divya@123",
-    Confirmpassword:"divya@123"
+    Confirmpassword:"divya@123",
+    
 }];
 
 user:User1[]=[];
@@ -77,7 +78,9 @@ constructor(private http:HttpClient){}
   public putUser(newUser: User) {
     return this.http.put(this.baseUrl + `/${newUser._id}`, newUser)
   }
-  public deleteUser(_id: number) {
+  public deleteUser(_id: string) {
+    console.log("Delete : "+_id);
+    
     return this.http.delete(this.baseUrl + `/${_id}`)
   }
 }

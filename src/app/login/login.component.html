@@ -9,8 +9,7 @@
   
   <div class="form-group">
     <label>Register Number</label>
-    <input type="text" #regNum="ngModel" class="form-control" required
-    [class.is-invalid]="regNum.invalid && regNum.touched"  name="regNum" [(ngModel)]="userModel.regNum" >
+    <input type="text" #regNum="ngModel" class="form-control" required [class.is-invalid]="regNum.invalid && regNum.touched"  name="regNum" [(ngModel)]="userModel.regNum" >
     <small class="text-danger" [class.d-none]="regNum.valid || regNum.untouched">Register Number is required</small>
   </div>
 

@@ -27,9 +27,9 @@ export class LoginComponent implements OnInit {
   ConfirmpasswordValue: string='';
   constructor(private router:Router,private login:LoginService,private route: ActivatedRoute){}
   ngOnInit(){
-    let data = localStorage.getItem(this.userModel.username);
+    // let data = localStorage.getItem(this.userModel.username);
     console.log(" ans "+this.userModel.username);
-    console.log(" data :"+data);
+    // console.log(" data :"+data);
     console.log("Id : "+this.userModel._id);
     // this.route.params.subscribe(params => {
     //   this._id = params['_id'];

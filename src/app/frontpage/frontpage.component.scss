@@ -4,25 +4,39 @@ button{
     border: 2px solid black;
     border-radius: 30px;
 }
-.first{
+.second{
     background-image:url('../../assets/front.png');
     // height: 700px;
-    width: 900px;
-   background-position: center ;
-   background-size: cover;
+    width: 750px;
+//    background-position: center ;
+//    background-size: cover;
     // margin: 0px;
    min-height: 95%;
    margin-top: 0px;
-   width: 100%;
+//    width: 100%;
 }
+// .container{
+//     border: 2px solid black;
+//     width: 200px;
+// }
 
 .Login,.Register{
     width: 120px;
     height: 50px;
-    margin-left: 500px;
+    // margin-left: 500px;
     color: #000;
 }
+.Register{
+    margin-top: 300px;
+    margin-left: 1000px;
 
-.second{
-    background-color: yellow;
 }
+.Login{
+    margin-top: 100px;
+    margin-left: 1000px;
+
+}
+
+// .second{
+//     // background-color: yellow;
+// }

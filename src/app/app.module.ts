@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -13,13 +13,14 @@ import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
-import { TimetableComponent } from './timetable/timetable.component';
 import { HolidayComponent } from './holiday/holiday.component';
 import { HttpClientModule  } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
 import { UpdateHolidayComponent } from './update-holiday/update-holiday.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ReferenceComponent } from './reference/reference.component';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,12 @@ import { ReferenceComponent } from './reference/reference.component';
     DashboardComponent,
     StudentDetailsComponent,
     SidenavbarComponent,
-    TimetableComponent,
     HolidayComponent,
     UpdateHolidayComponent,
     PageComponent,
     FrontpageComponent,
-    ReferenceComponent
+    ReferenceComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +45,10 @@ import { ReferenceComponent } from './reference/reference.component';
     MatToolbarModule,
     BrowserAnimationsModule,
     MatListModule,
-    MatIconModule,HttpClientModule
+    MatIconModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgImageSliderModule
  
 
   ],

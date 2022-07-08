@@ -1,11 +1,53 @@
 
-.add{
-  margin-left: 1000px;
-  }
-  .features{
-      border: 2px solid black;
-      margin: 50px;
-  }
-  .back{
-      margin-left: 50px;
-  }
+// .add{
+//   margin-left: 870px;
+//   }
+
+//   .back{
+//       margin-right: 20px;
+//   }
+// th,td{
+//     font-size: 18px;
+// }
+// .container{
+//     background-image:url('../../assets/background.png');
+//     // height: 200px;
+//     background-position: center;
+//     background-size: cover;
+//    width:100%;
+//    background-repeat: no-repeat;
+//     // width: 2000px;
+//    min-height: 95%;
+// //    margin-top: 0px;
+  
+// }
+
+
+.card-product{
+    border: 2px solid black;
+    margin: 10px;
+}
+.back{
+    float: right;
+    margin-right: 600px;
+    width: 100px;
+    height: px;
+}
+th {
+    // width: px;
+        font-size: large;
+    }
+
+    // td{
+    //         width: 20px;
+    //         resize: none;
+    //     }
+
+    table,th,tr,td {
+            text-align: center;
+        }
+
+    h1{
+        margin-left: 600px;
+        padding: 40px;
+    }

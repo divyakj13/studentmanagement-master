@@ -1,6 +1,9 @@
-<div class="container">
-    <h1>Student Details</h1>
-    <table class="table">
+<!-- <app-sidenavbar></app-sidenavbar> -->
+<h1>Student Register Details</h1>
+
+<div class="card-product">
+    <table class="table table-striped">
+  
         <thead>
             <th>Student Name</th>
             <th>Register Number</th>
@@ -19,10 +22,15 @@
 
                 <td>
                     <!-- <button [hidden]="rolePlay==='false'" class="btn btn-danger mx-3"  (click)="remove(i._id)">Remove</button> -->
-
+                    <button [hidden]= "rolePlay==='false'" class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button>
                 </td>
-
             </tr>
         </tbody>
     </table>
 </div>
+
+<button class="back btn btn-secondary" (click)="back()">Back</button>
+<!-- </div> -->
+
+<p *ngIf="roleName=='admin'"></p>
+<!-- <app-sidenavbar></app-sidenavbar> -->

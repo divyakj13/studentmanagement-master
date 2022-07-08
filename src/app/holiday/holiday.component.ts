@@ -44,15 +44,10 @@ export class HolidayComponent implements OnInit {
     });
   
   }
+back(){
+  this.router.navigate(['/page'])
+}
 
-
-  
-  // remove(id: number) {
-  //   alert("Are you sure to remove details?");
-  //   this.listService.removeUser(id);
-  //   this.userList = this.listService.getUsers();
-  // }
-  
   delete(_id:string){
     if (confirm('Are you sure to delete this record ?') == true) {
       this.listService.deleteHoliday(_id).subscribe((res) => {
