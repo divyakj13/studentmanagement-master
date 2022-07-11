@@ -22,30 +22,39 @@
 
 .card-product{
     border: 2px solid black;
-    margin: 10px;
+    // margin: 10px;
+    // margin: 10px;
+    // padding:20px;
+    margin-left: 320px;
+    width:60% ;
+    margin-top: 40px;
+    background-color: rgb(14, 74, 111);
 }
 .back{
+    margin-top: 20px;
     float: right;
-    margin-right: 70px;
+    margin-right: 240px;
     width: 100px;
     height: 60px;
 }
 th {
-    // width: px;
-        font-size: large;
+        font-size: 18px;
+        color: whitesmoke;
     }
-
-    // td{
-    //         width: 20px;
-    //         resize: none;
-    //     }
 
     table,th,tr,td {
             text-align: center;
            
         }
+        tr{
+            color: white;
+        }
 
     h1{
-        margin-left: 600px;
-        padding: 40px;
+        // margin-left: 600px;
+        padding: 30px;
+        font-size: 50px;
+        text-align: center;
+        background:rgb(14, 74, 111);
+        color:white
     }

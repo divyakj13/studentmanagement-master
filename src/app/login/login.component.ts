@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login.service';
+import { LoginService } from '../service/login.service';
 import { User } from '../user1';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,7 +28,7 @@ export class LoginComponent implements OnInit {
   _id: number = 0;
   passwordValue: string='';
   ConfirmpasswordValue: string='';
-  constructor(private router:Router,private login:LoginService,private route: ActivatedRoute){}
+  constructor(private router:Router,private login:LoginService,private route: ActivatedRoute,private formsmodule:FormsModule,private httpclient:HttpClient){}
   ngOnInit(){
     // let data = localStorage.getItem(this.userModel.username);
     console.log(" ans "+this.userModel.username);

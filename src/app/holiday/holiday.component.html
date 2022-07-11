@@ -1,6 +1,6 @@
 <h2>Holiday</h2>
 <div class="card-product">
-    <table class="table table-striped">
+    <table class="table">
         <thead>
             <!-- <th>S.No</th> -->
             <th>Date</th>
@@ -12,23 +12,21 @@
                 <td>{{i.date}}</td>
                 <td>{{i.descrip}}</td>
                 <td>
-                    <!-- <button [hidden]= "rolePlay==='false'" class="btn btn-info" [routerLink]="['/holiday-add',i._id]" >Edit</button>
-                            <button [hidden]= "rolePlay==='false'" class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button> -->
 
-                    <button class="btn btn-info" [hidden]= "rolePlay==='false'" [routerLink]="['/holiday-add',i._id]">Edit</button>
-                    <button class="btn btn-danger mx-3" [hidden]= "rolePlay==='false'" (click)="delete(i._id)">Remove</button>
-                    <!-- <p *ngIf="roleVal=='admin'">
-                                <button  class="btn btn-info" [routerLink]="['/holiday-add',i._id]" >Edit</button>
-                            <button  class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button>
-                            </p> -->
+                    <button class="btn btn-info" [hidden]="rolePlay==='false'"
+                        [routerLink]="['/holiday-add',i._id]">Edit</button>
+                    <button class="btn btn-danger mx-3" [hidden]="rolePlay==='false'"
+                        (click)="delete(i._id)">Remove</button>
                 </td>
             </tr>
         </tbody>
     </table>
-   
+
+
+</div>
+<div>
     <button [routerLink]="['/updateHoliday']" class="back btn btn-success">Add New</button>
     <button class="back btn btn-secondary" (click)="back()">Back</button>
-
 </div>
 
 

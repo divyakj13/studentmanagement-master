@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppServiceService } from '../app-service.service';
+import { AppServiceService } from '../service/app-service.service';
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
@@ -14,14 +14,17 @@ export class PageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getDataFromAPI();
+    // this.getDataFromAPI();
   }
-  getDataFromAPI(){
-    this.service.getData().subscribe((response)=>{
-      console.log('Response from API is ',response)
-    },(error)=>{
-      console.log('Error is ',error);
-    })
+  // getDataFromAPI(){
+  //   this.service.getData().subscribe((response)=>{
+  //     console.log('Response from API is ',response)
+  //   },(error)=>{
+  //     console.log('Error is ',error);
+  //   })
+  // }
+  logout(){
+    localStorage.removeItem('token')
   }
 }
   

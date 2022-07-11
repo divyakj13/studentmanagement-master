@@ -1,10 +1,43 @@
-<mat-drawer-container>
-    <mat-drawer mode="side" opened="true">
+<!-- <mat-drawer-container>
+     <mat-drawer mode="side" opened="true">
       <app-sidenavbar></app-sidenavbar>
     </mat-drawer>
     <mat-drawer-content>
 
     </mat-drawer-content>
   
-  </mat-drawer-container>
+  </mat-drawer-container> -->
   
+   <!-- <mat-drawer mode="side" opened="true">
+    <app-sidenavbar></app-sidenavbar> -->
+
+   <mat-drawer-container>
+     <mat-drawer mode="side" opened="true">
+      <mat-nav-list>
+        <div class="logo py-4">
+            <img src="https://i.pinimg.com/736x/79/5c/af/795caf79bd23835f75e46c3efaf1656f.jpg" alt="logo">
+          </div>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active">
+            <mat-icon>dashboard</mat-icon>Dashboard
+          </a>
+          <a mat-list-item routerLink="/holiday" routerLinkActive="list-item-active">
+            <mat-icon>taskassign</mat-icon>Holiday
+          </a>
+          <a mat-list-item routerLink="/studentdetails" routerLinkActive="list-item-active">
+            <mat-icon>class</mat-icon>Student
+          </a>
+          <a mat-list-item routerLink="/reference" routerLinkActive="list-item-active">
+            <mat-icon>assignment_ind</mat-icon>Reference
+          </a>
+        
+          <a mat-list-item routerLink="/user" routerLinkActive="list-item-active"(click)="logout()" >
+            <mat-icon>logout</mat-icon>Logout
+          </a>
+        </mat-nav-list>   
+    </mat-drawer>
+    <mat-drawer-content>
+
+    </mat-drawer-content>
+  
+  </mat-drawer-container>

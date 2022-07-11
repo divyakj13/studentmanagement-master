@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoginService } from '../login.service';
+import { LoginService } from '../service/login.service';
 import { RoleService } from '../role.service';
 import { User } from '../user1';
 
@@ -15,7 +15,7 @@ export class StudentDetailsComponent implements OnInit {
   
   user3:User[]=[];
   // editnum: number = 0;
-  roleName:string='';
+  roleName:string |null='';
   rolePlay:string='';
 
   constructor(private loginService: LoginService,private route: ActivatedRoute, private router: Router, private roleServer:RoleService) { }
@@ -23,7 +23,7 @@ export class StudentDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     // this.user3= this.loginService.role;
-    this.roleName=this.roleServer.role;
+    this.roleName=localStorage.getItem('role')
     console.log("Role name: "+this.roleName);
     if(this.roleName==='admin'){
       this.rolePlay='true';

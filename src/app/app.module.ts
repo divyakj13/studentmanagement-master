@@ -12,7 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentDetailsComponent } from './student-details/student-details.component';
-import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { HolidayComponent } from './holiday/holiday.component';
 import { HttpClientModule  } from '@angular/common/http';
 import { PageComponent } from './page/page.component';
@@ -20,7 +19,6 @@ import { UpdateHolidayComponent } from './update-holiday/update-holiday.componen
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ReferenceComponent } from './reference/reference.component';
 import { NgImageSliderModule } from 'ng-image-slider';
-import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +27,11 @@ import { HeaderComponent } from './header/header.component';
     LoginComponent,
     DashboardComponent,
     StudentDetailsComponent,
-    SidenavbarComponent,
     HolidayComponent,
     UpdateHolidayComponent,
     PageComponent,
     FrontpageComponent,
     ReferenceComponent,
-    HeaderComponent
   ],
   imports: [
     BrowserModule,

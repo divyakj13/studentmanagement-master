@@ -1,53 +1,37 @@
+h2{
+    font-size: 50px;
+    background:rgb(14, 74, 111);
+    text-align: center;
+    color: white;
+    padding: 20px;
 
-// .add{
-//   margin-left: 870px;
-//   }
-
-//   .back{
-//       margin-right: 20px;
-//   }
-// th,td{
-//     font-size: 18px;
-// }
-// .container{
-//     background-image:url('../../assets/background.png');
-//     // height: 200px;
-//     background-position: center;
-//     background-size: cover;
-//    width:100%;
-//    background-repeat: no-repeat;
-//     // width: 2000px;
-//    min-height: 95%;
-// //    margin-top: 0px;
-  
-// }
-
-
+}
 .card-product{
-    border: 2px solid black;
     margin: 10px;
+    padding:20px;
+    margin-left: 350px;
+    width:50% ;
+    margin-top: 100px;
+    background-color: rgb(14, 74, 111);
+
 }
 .back{
     float: right;
-    margin-right: 600px;
+    margin-right: 440px;
     width: 100px;
-    height: px;
 }
 th {
-    // width: px;
-        font-size: large;
+    font-size: 20px;
+        color:white
     }
 
-    // td{
-    //         width: 20px;
-    //         resize: none;
-    //     }
+    td{
+            width: 10px;
+            resize: none;
+            color: white;
+        }
 
     table,th,tr,td {
             text-align: center;
         }
 
-    h1{
-        margin-left: 600px;
-        padding: 40px;
-    }

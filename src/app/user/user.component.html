@@ -1,9 +1,10 @@
-<div class="container">
+<div class="container"> 
   <form #loginForm="ngForm">
 
     <div class="form-group">
       <label>Register Number</label>
-      <input type="text" #regNum="ngModel" class="form-control" [class.is-invalid]="regNum.invalid && regNum.touched" name="regNum" [(ngModel)]="regNumber" required>
+      <input type="text" #regNum="ngModel" class="form-control" [class.is-invalid]="regNum.invalid && regNum.touched"
+        name="regNum" [(ngModel)]="regNumber" required>
       <small class="text-danger" [class.d-none]="regNum.valid || regNum.untouched">Register is invalid</small>
     </div>
 
@@ -23,12 +24,8 @@
 
     </div>
     <br>
-    <!-- <div class="row justify-content-end">
-      <div class="form-group col-sm-12"> -->
+    <button [disabled]="loginForm.form.invalid" value="Login" (click)="display(loginForm)">Login</button>
 
-        <button [disabled]="loginForm.form.invalid" value="Login" (click)="display(loginForm)">Login</button>
-      <!-- </div>
-    </div> -->
   </form>
 
 </div>

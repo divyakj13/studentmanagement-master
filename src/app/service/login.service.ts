@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { User } from './user1';
-import { User1 } from './user/user';
+import { User } from '../user1';
+import { User1 } from '../user/user';
 import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,14 +11,14 @@ export class LoginService {
   
   userLogin=new User1(' ',' ');
   public userList: User[] = [{
-    _id:'1',
-    username: 'divya',
-    email: 'divya@gmail.com',
-    gender: 'female',
-    phone: '9360506366',
-    regNum:"ACE1111",
-    password:"divya@123",
-    Confirmpassword:"divya@123",
+    _id:'',
+    username: '',
+    email: '',
+    gender: '',
+    phone: '',
+    regNum:'',
+    password:'',
+    Confirmpassword:'',
     
 }];
 
@@ -53,12 +54,15 @@ constructor(private http:HttpClient){}
 //   removeUser(name : String) {
 //     this.userList = this.userList.filter(x => x.username != name);
 // }
-  loggedIn(){
-    return true;
-  }
-  logged(){
-    return true;
-  }
+
+
+  // loggedIn(){
+  //   return true;
+  // }
+  // logged(){
+  //   return true;
+  // }
+  
   getRole(role:string){
     this.Role=role;
   }
@@ -67,7 +71,6 @@ constructor(private http:HttpClient){}
     this.userList[userIndex] = user;
   }
 
-  
   public getUser() {
     return this.http.get(this.baseUrl);
   }
@@ -83,5 +86,10 @@ constructor(private http:HttpClient){}
     
     return this.http.delete(this.baseUrl + `/${_id}`)
   }
+
+  loggedIn():boolean{
+    return !!localStorage.getItem('token');
+  }
+  
 }
 

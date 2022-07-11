@@ -14,9 +14,9 @@ export class HolidayComponent implements OnInit {
 
   userList: User2[] = [];
   editnum: number = 0;
-  roleName:string='';
+  roleName:string | null='';
   // loginService: any;
-  rolePlay:string=''
+  rolePlay:string =''
   // roleVal:string=''
 
   constructor(private listService: ListService,private route: ActivatedRoute, private router: Router, private roleServer:RoleService) { }
@@ -27,7 +27,7 @@ export class HolidayComponent implements OnInit {
     
     // this.userList = this.listService.getUsers();
 
-    this.roleName=this.roleServer.role;
+    this.roleName=localStorage.getItem('role')
     console.log("Role name: "+this.roleName);
     if(this.roleName==='admin'){
       this.rolePlay='true';

@@ -1,4 +1,4 @@
-import { LoginService } from '../login.service';
+import { LoginService } from '../service/login.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,7 +12,6 @@ import { User1 } from './user';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-
   userLogin = new User1('Divya', 'Divya@13');   // roleList: any = ['Admin','User'];
   roleList: string = '';
   password: string = '';
@@ -28,13 +27,11 @@ export class UserComponent implements OnInit {
   }
   btnClick(){
     this.router.navigate(['/login']);
-
   }
 
   handleClick(regNum : String) {
     console.log("handleClick name : "+this.userLogin.password)
     console.log("handleClick name : "+this.userLogin.regNum)
-    console.log("sbscysgc7is"+regNum)
   
     if (regNum === this.userLogin.regNum) {
       if (this.password === this.userLogin.password) {
@@ -53,23 +50,18 @@ export class UserComponent implements OnInit {
 
 
   display(formData: NgForm) {
-
     this.roleService.getDetails(this.regNumber,this.password,this.roleList).subscribe((res)=>{
       console.log("res" +JSON.stringify(res));
       this.token = Object.values(res)[0]
       this.message = Object.values(res)[1]
       console.log("msg"+this.message)
       if(this.message === "true"){
-       
         localStorage.setItem('token',this.token);
-
         this.router.navigate(['/page'])
       }
       else{
-        
         this.router.navigate(['/user'])
       }
-    
      })
     
     console.log("user role : "+this.roleList)
@@ -77,24 +69,19 @@ export class UserComponent implements OnInit {
     console.log(formData.value);
     console.log(formData.value.role);
     this.roleService.setUserRole=formData.value.role
-    
+    localStorage.setItem('role',this.roleList)
     this.roleService.getRole(this.roleList)
 
     if (this.roleList == "admin") {
+      // localStorage.setItem('role',this.roleList)
       if (this.handleClick(this.regNumber)) {
         console.warn("you are admin");
-
         this.router.navigate(['/page']);
       }
     else {
 
-      this.router.navigate(['/page']);
+      this.router.navigate(['/']);
     }
   }
-
     }
-
-   
-
-   
 }
