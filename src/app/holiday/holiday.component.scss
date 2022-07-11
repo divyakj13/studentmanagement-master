@@ -12,7 +12,7 @@ h2{
     margin-left: 350px;
     width:50% ;
     margin-top: 100px;
-    background-color: rgb(14, 74, 111);
+    // background-color: rgb(14, 74, 111);
 
 }
 .back{
@@ -22,16 +22,21 @@ h2{
 }
 th {
     font-size: 20px;
-        color:white
+    // border: 1px solid black;
+
     }
 
-    td{
-            width: 10px;
-            resize: none;
-            color: white;
-        }
+    // td{
+    //         width: 1000px;
+    //         // resize: none;
+           
+    //     }
 
-    table,th,tr,td {
-            text-align: center;
-        }
+
+            // table,th,tr,td {
+            //     margin: 15px;
+            //     text-align: center;
+                // border: 1px solid black;
+            // }
+        
 

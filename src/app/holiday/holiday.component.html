@@ -1,14 +1,13 @@
 <h2>Holiday</h2>
 <div class="card-product">
-    <table class="table">
-        <thead>
-            <!-- <th>S.No</th> -->
-            <th>Date</th>
-            <th>Reason</th>
+    <table class="table table-striped">
+        <thead>   
+            <th>DATE</th>
+            <th>REASON</th>
         </thead>
         <tbody>
             <tr *ngFor="let i of userList">
-                <!-- <td>{{i._id}}</td> -->
+            
                 <td>{{i.date}}</td>
                 <td>{{i.descrip}}</td>
                 <td>
@@ -17,6 +16,7 @@
                         [routerLink]="['/holiday-add',i._id]">Edit</button>
                     <button class="btn btn-danger mx-3" [hidden]="rolePlay==='false'"
                         (click)="delete(i._id)">Remove</button>
+
                 </td>
             </tr>
         </tbody>
@@ -31,4 +31,3 @@
 
 
 <p *ngIf="roleName=='admin'">
-    <!-- <app-page></app-page> -->

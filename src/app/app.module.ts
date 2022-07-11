@@ -19,6 +19,10 @@ import { UpdateHolidayComponent } from './update-holiday/update-holiday.componen
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ReferenceComponent } from './reference/reference.component';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from './service/token-interceptor.service';
+import { LoginService } from './service/login.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { NgImageSliderModule } from 'ng-image-slider';
  
 
   ],
-  providers: [],
+  providers: [LoginService,AuthGuard,{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

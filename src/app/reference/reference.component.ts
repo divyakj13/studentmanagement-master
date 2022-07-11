@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-reference',
@@ -8,9 +9,12 @@ import { HttpClient } from '@angular/common/http';
 export class ReferenceComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-
+  back(){
+    this.router.navigate(['/page'])
+  }
+  
 }

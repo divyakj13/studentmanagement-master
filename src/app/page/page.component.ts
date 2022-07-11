@@ -14,15 +14,8 @@ export class PageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.getDataFromAPI();
   }
-  // getDataFromAPI(){
-  //   this.service.getData().subscribe((response)=>{
-  //     console.log('Response from API is ',response)
-  //   },(error)=>{
-  //     console.log('Error is ',error);
-  //   })
-  // }
+  
   logout(){
     localStorage.removeItem('token')
   }
