@@ -1,3 +1,4 @@
+
 <h2>Holiday</h2>
 <div class="card-product">
     <table class="table table-striped">
@@ -25,7 +26,7 @@
 
 </div>
 <div>
-    <button [routerLink]="['/updateHoliday']" class="back btn btn-success">Add New</button>
+    <button [routerLink]="['/updateHoliday']" [hidden]="rolePlay==='false'" class="back btn btn-success">Add New</button>
     <button class="back btn btn-secondary" (click)="back()">Back</button>
 </div>
 

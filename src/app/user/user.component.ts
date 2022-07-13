@@ -23,29 +23,11 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.roleService.roleValue1=this.roleList;
     this.roleList=this.roleService.role;
-
+    console.log("rolelist : "+this.roleList);
+    
   }
   btnClick(){
     this.router.navigate(['/login']);
-  }
-
-  handleClick(regNum : String) {
-    console.log("handleClick name : "+this.userLogin.password)
-    console.log("handleClick name : "+this.userLogin.regNum)
-  
-    if (regNum === this.userLogin.regNum) {
-      if (this.password === this.userLogin.password) {
-        return true
-      }
-      else {
-        alert("check password")
-        return false
-      }
-    }
-    else {
-      alert("user not found")
-      return false
-    }
   }
 
 
@@ -72,16 +54,16 @@ export class UserComponent implements OnInit {
     localStorage.setItem('role',this.roleList)
     this.roleService.getRole(this.roleList)
 
-    if (this.roleList == "admin") {
-      // localStorage.setItem('role',this.roleList)
-      if (this.handleClick(this.regNumber)) {
-        console.warn("you are admin");
-        this.router.navigate(['/page']);
-      }
-    else {
+  //   if (this.roleList == "admin") {
+  //     // localStorage.setItem('role',this.roleList)
+  //     if (this.handleClick(this.regNumber)) {
+  //       console.warn("you are admin");
+  //       this.router.navigate(['/page']);
+  //     }
+  //   else {
 
-      this.router.navigate(['/']);
-    }
-  }
+  //     this.router.navigate(['/']);
+  //   }
+  // }
     }
 }

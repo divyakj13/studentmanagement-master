@@ -1,21 +1,22 @@
-<div class="container"> 
+<div class="outer">
+<div class="container justify-content-center"> 
   <form #loginForm="ngForm">
 
     <div class="form-group">
-      <label>Register Number</label>
+      <label>REGISTER NUMBER</label>
       <input type="text" #regNum="ngModel" class="form-control" [class.is-invalid]="regNum.invalid && regNum.touched"
         name="regNum" [(ngModel)]="regNumber" required>
       <small class="text-danger" [class.d-none]="regNum.valid || regNum.untouched">Register is invalid</small>
     </div>
 
     <div class="form-group">
-      <label>Password</label>
+      <label>PASSWORD</label>
       <span class="text-danger">*</span><br>
       <input class="text-danger" type="password" id="password" [(ngModel)]="password" name="password" required="">
     </div>
 
     <div class="form-group">
-      <label>Role</label>
+      <label>ROLE</label>
       <span class="text-danger"> *</span>
       <select #role="ngModel" class="form-select" id="role" name="role" pattern="user|admin" [(ngModel)]="roleList">
         <option value="admin">Admin</option>
@@ -25,7 +26,8 @@
     </div>
     <br>
     <button [disabled]="loginForm.form.invalid" value="Login" (click)="display(loginForm)">Login</button>
-
+<br><a href="/login">Not yet Register!!!</a>
   </form>
 
+</div>
 </div>

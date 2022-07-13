@@ -5,7 +5,7 @@
 }
 mat-drawer{
     width:201px;
-    background:rgb(3, 26, 67);
+    background:rgb(28, 57, 106);
 }
 
 .logo{
@@ -21,7 +21,7 @@ mat-drawer{
 }
 
 .mat-list-item{
-    color:rgb(199, 194, 194);
+    color:rgb(255, 255, 255);
     font-size: 0.9rem;
     height: 44px ;
     margin-bottom: 4px;
@@ -41,7 +41,7 @@ mat-drawer{
     color:rgb(255, 255, 255);
     ::ng-deep{
         .mat-list-item-content{
-            background:#415585;
+            background:#000000;
             &:hover{
                 background: #486097;
                  }

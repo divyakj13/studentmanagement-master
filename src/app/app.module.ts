@@ -23,7 +23,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './service/token-interceptor.service';
 import { LoginService } from './service/login.service';
 import { AuthGuard } from './auth.guard';
-
+import { HeaderComponent } from './header/header.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { matFormFieldAnimations, MatFormFieldModule } from '@angular/material/form-field';
+import { FileComponent } from './file/file.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +40,8 @@ import { AuthGuard } from './auth.guard';
     PageComponent,
     FrontpageComponent,
     ReferenceComponent,
+    HeaderComponent,
+    FileComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,9 +54,10 @@ import { AuthGuard } from './auth.guard';
     MatIconModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgImageSliderModule
- 
-
+    NgImageSliderModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [LoginService,AuthGuard,{
     provide:HTTP_INTERCEPTORS,
