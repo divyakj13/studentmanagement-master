@@ -1,54 +1,35 @@
-button{
+button {
     width: 150px;
     height: 50px;
     border: 2px solid rgb(86, 17, 17);
     border-radius: 30px;
-    // rgb(40, 27, 128);
-    // color:white;
-    background-color:rgb(22, 101, 143);
-    
+    background-color: rgb(22, 101, 143);
 }
 
-.second{
-    background-image:url('../../assets/front.png');
-    // height: 700px;
+.second {
+    background-image: url('../../assets/front.png');
     width: 745px;
-//    background-position: center ;
-//    background-size: cover;
-    // margin: 0px;
-   min-height: 95%;
-
-   margin-top: 0px;
-//    width: 100%;
+    min-height: 95%;
+    margin-top: 0px;
 }
-// .container{
-//     border: 2px solid black;
-//     width: 200px;
-// }
 
-.Login,.Register{
-    // width: 120px;
-    // height: 50px;
-    // margin-left: 500px;
-    color:white;
-
+.Login,
+.Register {
+    color: white;
 }
-.Register{
+
+.Register {
     margin-top: 50px;
     margin-left: 1000px;
-    
 }
-.Login{
+
+.Login {
     margin-top: 250px;
     margin-left: 1000px;
 }
 
-// .second{
-//     // background-color: yellow;
-// }
-
-h1{
-    font-style:oblique;
+h1 {
+    font-style: oblique;
     font-size: 50px;
     margin-top: 30px;
     margin-left: 100px;

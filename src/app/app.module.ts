@@ -26,7 +26,9 @@ import { AuthGuard } from './auth.guard';
 import { HeaderComponent } from './header/header.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
-import { matFormFieldAnimations, MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatMenuModule } from '@angular/material/menu';
 import { FileComponent } from './file/file.component';
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { FileComponent } from './file/file.component';
     NgImageSliderModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressBarModule,
+    MatMenuModule
   ],
   providers: [LoginService,AuthGuard,{
     provide:HTTP_INTERCEPTORS,

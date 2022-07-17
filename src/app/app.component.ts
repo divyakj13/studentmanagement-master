@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { AppServiceService } from './service/app-service.service';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,19 +9,14 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'studentmanagement';
 
-  constructor(private service:AppServiceService,public router:Router){
+  constructor(){
 
   }
 
   ngOnInit() {
-    // this.getDataFromAPI();
+    
   }
-  // getDataFromAPI(){
-  //   this.service.getData().subscribe((response)=>{
-  //     console.log('Response from API is ',response)
-  //   },(error)=>{
-  //     console.log('Error is ',error);
-  //   })
+  
   }
 
   

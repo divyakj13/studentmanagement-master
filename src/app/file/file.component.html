@@ -1,20 +1,32 @@
-<!-- <mat-form-field>
+<div class="mainContainer">
+    <div class="content">
+        <div class="header">
+            <h1>Time Table</h1>
+        </div>
+        <div class="row margin25">
 
-    <div class="myfilebrowser">
+            <div class="col-md-4">
 
-      <mat-toolbar>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <div class="custom-file">
+                        <form action="/api/upload" method="post" enctype="multipart/form-data">
+                            
+                            <input  (change)="fileChange($event)"  type="file"  class="custom-file-input"  id="inputGroupFile01"  aria-describedby="inputGroupFileAddon01">
+                            <span  class="input-group-text upload"  (click)="upload()"  id="btnUpload">Upload</span>
+                            
+                        </form>
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text upload" id="btnUpload">Upload</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
 
-        <input matInput [(ngModel)]="myfilename" readonly name="memberContactNo" />
-
-        <button mat-flat-button color="primary">
-          Browse
-        </button>
-
-      </mat-toolbar>
-
-      <input type="file" #UploadFileInput id="fileUpload" (change)="fileChangeEvent($event)" name="fileUpload"
-        multiple="multiple" accept="image/*" />
-
+            </div>
+        </div>
     </div>
-
-</mat-form-field> -->
+</div>

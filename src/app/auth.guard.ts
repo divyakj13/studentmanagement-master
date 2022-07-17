@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
       return true;
     }
     else{
-      window.alert("Login to proceed !!!!!");
+      window.alert("Login to proceed !!!");
       this.router.navigate(['/']);
         return false;
     }

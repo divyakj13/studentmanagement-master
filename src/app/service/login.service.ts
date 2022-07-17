@@ -8,65 +8,50 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  
-  userLogin=new User1(' ',' ');
+  per: string;
+  userLogin = new User1(' ', ' ');
   public userList: User[] = [{
-    _id:'',
+    _id: '',
     username: '',
     email: '',
     gender: '',
     phone: '',
-    regNum:'',
-    password:'',
-    Confirmpassword:'',
-    
-}];
+    regNum: '',
+    password: '',
+    Confirmpassword: '',
 
-user:User1[]=[];
-user1!:User;
-readonly baseUrl='http://localhost:3000/student';
-id1:number=0;
-Role:string='';
+  }];
 
-constructor(private http:HttpClient){}
-  
+  user: User1[] = [];
+  user1!: User;
+  readonly baseUrl = 'http://localhost:3000/student';
+  id1: number = 0;
+  Role: string = '';
+  name: string = ''
 
-  getDetails(userForm:User){
-    
-    return this.http.post(this.baseUrl,userForm)
+  constructor(private http: HttpClient) { }
 
+  setPerson(username: string) {
+    this.per = username
+  }
+  getPerson() {
+    return this.per
   }
 
-//   setMessage(user: User){
-//     user._id = this.userList.length+1;
-//     this.userList.push(user);
-
-//   }
-//   getUsersByName(name : String){
-//     this.userList = this.userList.filter(x => x.username != name);
-//   }
-//   getUsers(){
-//     return this.userList
-//   }
-//   getUsersByID(id: number){
-//     return this.userList.find(x => x._id == id)
-//   }
-//   removeUser(name : String) {
-//     this.userList = this.userList.filter(x => x.username != name);
-// }
-
-
-  // loggedIn(){
-  //   return true;
-  // }
-  // logged(){
-  //   return true;
-  // }
-  
-  getRole(role:string){
-    this.Role=role;
+  getname(name: string) {
+    this.name = name;
+    console.log(name);
+    return name
   }
-  updateUser(user:User){
+
+  getDetails(userForm: User) {
+    return this.http.post(this.baseUrl, userForm)
+  }
+
+  getRole(role: string) {
+    this.Role = role;
+  }
+  updateUser(user: User) {
     const userIndex = this.userList.findIndex(x => x._id == user._id);
     this.userList[userIndex] = user;
   }
@@ -76,23 +61,22 @@ constructor(private http:HttpClient){}
   }
   public postUser(newUser: User) {
     return this.http.post(this.baseUrl, newUser);
-
   }
   public putUser(newUser: User) {
     return this.http.put(this.baseUrl + `/${newUser._id}`, newUser)
   }
   public deleteUser(_id: string) {
-    console.log("Delete : "+_id);
-    
     return this.http.delete(this.baseUrl + `/${_id}`)
   }
 
-  loggedIn():boolean{
+
+
+  loggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
-  getToken(){
+  getToken() {
     return localStorage.getItem('token')
   }
-  
+
 }
 

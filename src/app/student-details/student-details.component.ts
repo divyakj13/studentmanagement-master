@@ -14,7 +14,6 @@ export class StudentDetailsComponent implements OnInit {
 
   
   user3:User[]=[];
-  // editnum: number = 0;
   roleName:string |null='';
   rolePlay:string='';
 
@@ -22,12 +21,9 @@ export class StudentDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.user3= this.loginService.role;
     this.roleName=localStorage.getItem('role')
-    console.log("Role name: "+this.roleName);
     if(this.roleName==='admin'){
       this.rolePlay='true';
-      console.log('true');  
     }
     else{
       this.rolePlay='false';
@@ -39,18 +35,10 @@ export class StudentDetailsComponent implements OnInit {
   });
 }
   
-//   remove(_id: number) {
-//     alert("Are you sure to remove details?");
-//     this.listService.removeUser(_id);
-//     // this.user3 = this.listService.getUsers();
-//   }
-
-// }
 
 delete(_id:string){
   if (confirm('Are you sure to delete this record ?') == true) {
     this.loginService.deleteUser(_id).subscribe((res) => {
-      console.log(res);  
     });
     this.loginService.getUser().subscribe((res)=>{
       this.user3=res as User[]

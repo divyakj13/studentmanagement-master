@@ -1,4 +1,3 @@
-<!-- <app-sidenavbar></app-sidenavbar> -->
 
 <h1>Student Register Details</h1>
 
@@ -22,7 +21,6 @@
                 <td>{{i.phone}}</td>
 
                 <td>
-                    <!-- <button [hidden]="rolePlay==='false'" class="btn btn-danger mx-3"  (click)="remove(i._id)">Remove</button> -->
                     <button [hidden]= "rolePlay==='false'" class="btn btn-danger mx-3" (click)="delete(i._id)">Remove</button>
                 </td>
             </tr>
@@ -31,7 +29,5 @@
 </div>
 
 <button class="back btn btn-secondary" (click)="back()">Back</button>
-<!-- </div> -->
 
 <p *ngIf="roleName=='admin'"></p>
-<!-- <app-sidenavbar></app-sidenavbar> -->

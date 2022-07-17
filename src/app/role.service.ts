@@ -37,14 +37,8 @@ export class RoleService {
   getDetails(regNum: string, password: string,role:string) {
     this.regNum = regNum;
     this.password = password;
-    console.log("get......");
-    console.log(this.regNum);
-    console.log(this.password);
-
+    this.role=role;
     return this.http.get(this.baseUrl + `/${regNum}` + `/${password}`+`/${role}`);
-
-
-
 
   }
 

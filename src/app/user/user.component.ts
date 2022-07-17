@@ -12,7 +12,7 @@ import { User1 } from './user';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  userLogin = new User1('Divya', 'Divya@13');   // roleList: any = ['Admin','User'];
+  userLogin = new User1('Divya', 'Divya@13'); 
   roleList: string = '';
   password: string = '';
   regNumber: string = '';
@@ -22,9 +22,7 @@ export class UserComponent implements OnInit {
   constructor(private router: Router, private loginService: LoginService,private roleService:RoleService) { }
   ngOnInit(): void {
     this.roleService.roleValue1=this.roleList;
-    this.roleList=this.roleService.role;
-    console.log("rolelist : "+this.roleList);
-    
+    this.roleList=this.roleService.role;    
   }
   btnClick(){
     this.router.navigate(['/login']);
@@ -32,11 +30,10 @@ export class UserComponent implements OnInit {
 
 
   display(formData: NgForm) {
+    this.loginService.getname(formData.value.regNum)
     this.roleService.getDetails(this.regNumber,this.password,this.roleList).subscribe((res)=>{
-      console.log("res" +JSON.stringify(res));
       this.token = Object.values(res)[0]
       this.message = Object.values(res)[1]
-      console.log("msg"+this.message)
       if(this.message === "true"){
         localStorage.setItem('token',this.token);
         this.router.navigate(['/page'])
@@ -45,25 +42,10 @@ export class UserComponent implements OnInit {
         this.router.navigate(['/user'])
       }
      })
-    
-    console.log("user role : "+this.roleList)
-    console.log("user register Number : "+this.regNumber)
-    console.log(formData.value);
-    console.log(formData.value.role);
+
     this.roleService.setUserRole=formData.value.role
     localStorage.setItem('role',this.roleList)
     this.roleService.getRole(this.roleList)
 
-  //   if (this.roleList == "admin") {
-  //     // localStorage.setItem('role',this.roleList)
-  //     if (this.handleClick(this.regNumber)) {
-  //       console.warn("you are admin");
-  //       this.router.navigate(['/page']);
-  //     }
-  //   else {
-
-  //     this.router.navigate(['/']);
-  //   }
-  // }
     }
 }

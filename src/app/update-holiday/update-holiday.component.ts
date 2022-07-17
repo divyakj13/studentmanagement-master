@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { formatDate } from '@angular/common';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListService } from '../service/list.service';
@@ -8,69 +9,50 @@ import { User2 } from '../user2';
   templateUrl: './update-holiday.component.html',
   styleUrls: ['./update-holiday.component.scss']
 })
-export class UpdateHolidayComponent  implements OnInit {
+export class UpdateHolidayComponent implements OnInit {
   userList: User2 = {
-    _id: '',
-    date :'',
-    descrip :'',
+    date: '',
+    descrip: '',
+    _id: ''
   }
+
+  locale = 'en-US'
 
   constructor(private service: ListService, private router: Router, private route: ActivatedRoute,) {
 
   }
+  @ViewChild("userForm") userForm!: NgForm;
+  _id: string = '';
 
-  _id: string ='';
   ngOnInit(): void {
 
-    // this.route.params.subscribe((params: { [x: string]: number; }) => {
-    //   this.id = params['id'];
-    //   if (this.id != null) {
-    //     this.userList.id = (params['id']);
-    //     const data = this.service.getUsersByID(this.id);
-    //     if (data) {
-    //       this.userList = (data);
-    //     }
-    //   }
-    // });
-
     this.route.params.subscribe(params => {
-      this._id=params['_id']
-      
-      console.log("route _id : "+this._id);        
+      this._id = params['_id']
     });
+
+    this.service.getLeave(this._id).subscribe(
+      (res: any) => this.editHoliday(res),
+      (err: any) => alert(JSON.stringify(err))
+    )
   }
 
+  editHoliday(res: User2) {
+    this.userForm.setValue({
+      date: formatDate(res.date, 'YYYY-MM-dd', this.locale),
+      descrip: res.descrip
+    })
+  }
 
-  tableDisplay(userForm:NgForm) {
-    // if (this.userList.id === 0) {
-    //   //Create New User
-    //   console.log("id : " + this.userList.id);
-    //   this.service.setUser(this.userList);
-    //   alert("Details are added Successfully")
-    // } 
-    // else {
-    //   //Update User info
-    //   this.service.updateUser(this.userList);
-    //   alert("Details are Updated Successfully")
-    // }
+  tableDisplay(userForm: NgForm) {
     if (!this._id) {
       //Create New User
-      console.log("post id : "+this._id);
-      
-      this.service.postHoliday(userForm.value).subscribe((data)=>{
-        console.log(data);
+      console.log("post id : " + this._id);
+      this.service.postHoliday(userForm.value).subscribe((data) => {
       })
-      // console.log("id : " + this.list._id);
-      // console.log(this.list);
       alert("Details are added Successfully")
-    } 
+    }
     else {
-      //Update User info
-      // this.formData(eventForm);
-      console.log("put id"+this._id);
-
-      this.service.putHoliday(userForm.value,this._id).subscribe((res)=>{
-        console.log("update event info");
+      this.service.putHoliday(userForm.value, this._id).subscribe((res) => {
       })
       alert("Details are Updated Successfully")
     }
@@ -79,9 +61,5 @@ export class UpdateHolidayComponent  implements OnInit {
   backButton() {
     this.router.navigate(['/holiday']);
   }
-
-  // success() {
-
-  // }
 
 }

@@ -1,20 +1,16 @@
 .container {
     padding: 30px;
     width: 40%;
-    // background-color: rgb(49, 115, 151);
-    background-image: linear-gradient(to right, rgb(47, 132, 178) , rgb(124, 134, 254));
+    background-image: linear-gradient(to right, rgb(47, 132, 178), rgb(124, 134, 254));
     background-position: center;
     background-size: cover;
     border: 1px solid white;
 }
 
 .outer {
-    // margin-top: 1px;
     padding-top: 10%;
     height: 100vh;
     background: url('https://st2.depositphotos.com/1010652/10744/v/950/depositphotos_107447708-stock-illustration-back-to-school-background.jpg');
-    // background-color: rgb(49, 115, 151);
-    // background-image: linear-gradient(to right, rgb(59, 101, 180) , rgb(222, 223, 233));
 }
 
 a {
@@ -25,7 +21,6 @@ input,
 select {
     padding: 10px;
     width: 100%;
-    // height:50px;  
     background-color: rgb(255, 255, 255);
 }
 
@@ -35,11 +30,6 @@ label {
     font-size: large;
 }
 
-// select{
-//     width: 98%;
-//     height: 50px;
-//     // margin-left: 15px;
-// }
 button {
     background-color: rgb(246, 246, 246);
     width: 30%;

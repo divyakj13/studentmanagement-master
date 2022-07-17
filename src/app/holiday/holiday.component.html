@@ -1,24 +1,23 @@
-
 <h2>Holiday</h2>
 <div class="card-product">
     <table class="table table-striped">
-        <thead>   
+        <thead>
             <th>DATE</th>
             <th>REASON</th>
         </thead>
+
         <tbody>
             <tr *ngFor="let i of userList">
-            
                 <td>{{i.date}}</td>
                 <td>{{i.descrip}}</td>
-                <td>
 
+                <td>
                     <button class="btn btn-info" [hidden]="rolePlay==='false'"
                         [routerLink]="['/holiday-add',i._id]">Edit</button>
                     <button class="btn btn-danger mx-3" [hidden]="rolePlay==='false'"
                         (click)="delete(i._id)">Remove</button>
-
                 </td>
+
             </tr>
         </tbody>
     </table>
@@ -26,7 +25,8 @@
 
 </div>
 <div>
-    <button [routerLink]="['/updateHoliday']" [hidden]="rolePlay==='false'" class="back btn btn-success">Add New</button>
+    <button [routerLink]="['/updateHoliday']" [hidden]="rolePlay==='false'" class="back btn btn-success">Add
+        New</button>
     <button class="back btn btn-secondary" (click)="back()">Back</button>
 </div>
 

@@ -2,36 +2,30 @@ input,
 label {
     margin-top: 10px;
     margin-left: 45px;
-    width:70%;
-    // padding:20px;
+    width: 70%;
 }
-// .form-control-label{
-// //    margin-right:;
-// }
+
 
 label,
-a
- {
+a {
     color: white;
 }
 
 h2 {
 
-  
+
     text-align: center;
     font-size: 40px;
     color: white;
 }
 
 .container {
-    
+
     margin-left: 450px;
     border: 2px solid white;
     width: 40%;
     padding: 40px;
-    background-image: linear-gradient(to right, rgb(47, 132, 178) , rgb(124, 134, 254));
-    // background-image: linear-gradient(to right, rgb(22, 101, 143) , rgb(222, 223, 233));
-    // https://www.powershow.com/view0/917f9b-NDVjY/Vidyalaya-School_Management_Software_1_powerpoint_ppt_presentation
+    background-image: linear-gradient(to right, rgb(47, 132, 178), rgb(124, 134, 254));
 }
 
 button {
@@ -40,16 +34,13 @@ button {
     color: black;
     width: 30%;
     height: 50px;
-    // color: white;
     background-color: rgb(246, 246, 246);
 
 }
 
-.outer{
+.outer {
     padding-top: 1%;
-    // height: 100vh;
-    // background-color: rgb(55, 12, 48);
-    background:url('https://st2.depositphotos.com/1010652/10744/v/950/depositphotos_107447708-stock-illustration-back-to-school-background.jpg');
+    background: url('https://st2.depositphotos.com/1010652/10744/v/950/depositphotos_107447708-stock-illustration-back-to-school-background.jpg');
     background-position: center;
     background-size: cover;
 }
