@@ -32,6 +32,8 @@ export class UserComponent implements OnInit {
   display(formData: NgForm) {
     this.loginService.getname(formData.value.regNum)
     this.roleService.getDetails(this.regNumber,this.password,this.roleList).subscribe((res)=>{
+
+      
       this.token = Object.values(res)[0]
       this.message = Object.values(res)[1]
       if(this.message === "true"){
@@ -39,7 +41,7 @@ export class UserComponent implements OnInit {
         this.router.navigate(['/page'])
       }
       else{
-        this.router.navigate(['/user'])
+        this.router.navigate(['/'])
       }
      })
 

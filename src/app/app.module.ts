@@ -29,7 +29,6 @@ import {MatInputModule} from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatMenuModule } from '@angular/material/menu';
-import { FileComponent } from './file/file.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +42,7 @@ import { FileComponent } from './file/file.component';
     FrontpageComponent,
     ReferenceComponent,
     HeaderComponent,
-    FileComponent,
+
   ],
   imports: [
     BrowserModule,

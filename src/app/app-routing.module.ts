@@ -11,7 +11,7 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ReferenceComponent } from './reference/reference.component';
 import { AuthGuard } from './auth.guard';
 import { HeaderComponent } from './header/header.component';
-import { FileComponent } from './file/file.component';
+
 const routes: Routes = [
   { path: '', component: FrontpageComponent },
   { path: 'user', component: UserComponent },
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'updateHoliday', component: UpdateHolidayComponent,canActivate:[AuthGuard]  },
   { path: 'reference', component: ReferenceComponent,canActivate:[AuthGuard] },
   {path:'header',component:HeaderComponent,canActivate:[AuthGuard]},
-  {path:'file',component:FileComponent}
+
   ]
 
 

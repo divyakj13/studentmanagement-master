@@ -30,10 +30,12 @@ export class UpdateHolidayComponent implements OnInit {
       this._id = params['_id']
     });
 
-    this.service.getLeave(this._id).subscribe(
-      (res: any) => this.editHoliday(res),
-      (err: any) => alert(JSON.stringify(err))
-    )
+    if(this._id.length==24){
+      this.service.getLeave(this._id).subscribe(
+        (res: any) => this.editHoliday(res),
+        (err: any) => alert(JSON.stringify(err))
+      )
+    }
   }
 
   editHoliday(res: User2) {
@@ -46,7 +48,6 @@ export class UpdateHolidayComponent implements OnInit {
   tableDisplay(userForm: NgForm) {
     if (!this._id) {
       //Create New User
-      console.log("post id : " + this._id);
       this.service.postHoliday(userForm.value).subscribe((data) => {
       })
       alert("Details are added Successfully")

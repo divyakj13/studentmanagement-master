@@ -15,6 +15,7 @@ export class HolidayComponent implements OnInit {
   editnum: number = 0;
   roleName: string | null = '';
   rolePlay: string = ''
+  date:string=''
 
   constructor(private listService: ListService, private route: ActivatedRoute, private router: Router, private roleServer: RoleService) { }
 
@@ -31,6 +32,9 @@ export class HolidayComponent implements OnInit {
     }
 
     this.listService.getholiday().subscribe((res) => {
+      console.log(res);
+      this.date=Object.values(res)[1]
+      
       this.userList = res as User2[]
 
     });
