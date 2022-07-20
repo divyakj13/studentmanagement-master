@@ -29,6 +29,7 @@ export class UpdateHolidayComponent implements OnInit {
     this.route.params.subscribe(params => {
       this._id = params['_id']
     });
+    
 
     if(this._id.length==24){
       this.service.getLeave(this._id).subscribe(
@@ -47,6 +48,7 @@ export class UpdateHolidayComponent implements OnInit {
 
   tableDisplay(userForm: NgForm) {
     if (!this._id) {
+
       //Create New User
       this.service.postHoliday(userForm.value).subscribe((data) => {
       })

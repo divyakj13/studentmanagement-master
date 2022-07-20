@@ -22,12 +22,6 @@ export class StudentDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.roleName=localStorage.getItem('role')
-    if(this.roleName==='admin'){
-      this.rolePlay='true';
-    }
-    else{
-      this.rolePlay='false';
-    }
   
 
   this.loginService.getUser().subscribe((res)=>{

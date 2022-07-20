@@ -4,6 +4,7 @@
 
       <div class="form-group">
         <label>REGISTER NUMBER</label>
+        
         <input type="text" #regNum="ngModel" class="form-control" [class.is-invalid]="regNum.invalid && regNum.touched"
           name="regNum" [(ngModel)]="regNumber" required>
         <small class="text-danger" [class.d-none]="regNum.valid || regNum.untouched">Register is invalid</small>

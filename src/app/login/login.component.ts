@@ -13,17 +13,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  user3: User={
-    _id: '',
-    username: '',
-    email: '',
-    phone: '',
-    gender: '',
-    regNum: '',
-    password: '',
-    Confirmpassword: ''
-  }
-
   userModel = new User();
   _id: number = 0;
   passwordValue: string='';
@@ -37,10 +26,9 @@ export class LoginComponent implements OnInit {
       return true;
     }
     else{
-  
       return false;
     }
-
+    
   }
 
   userdata(userForm:NgForm)
@@ -49,4 +37,16 @@ export class LoginComponent implements OnInit {
     })
 
   this.router.navigate(['/']);
-  }}
+  }
+
+  // public  data1:number;
+  // public get getdata(){
+  //   return this.data1
+  // }
+  // public set data1(value:number){
+  //   this.data1=value
+  // }
+
+}
+
+  

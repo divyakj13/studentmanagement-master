@@ -24,7 +24,6 @@ const routes: Routes = [
   { path: 'updateHoliday', component: UpdateHolidayComponent,canActivate:[AuthGuard]  },
   { path: 'reference', component: ReferenceComponent,canActivate:[AuthGuard] },
   {path:'header',component:HeaderComponent,canActivate:[AuthGuard]},
-
   ]
 
 

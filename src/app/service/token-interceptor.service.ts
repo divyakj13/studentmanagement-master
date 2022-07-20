@@ -11,11 +11,13 @@ export class TokenInterceptorService implements HttpInterceptor {
   constructor(private loginData: LoginService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
+
     let reqToken = req.clone({
       setHeaders: {
         Authorization: 'Bearer ' + this.loginData.getToken()
       }
     })
+    
     return next.handle(reqToken).pipe(
       catchError((error) => {
 

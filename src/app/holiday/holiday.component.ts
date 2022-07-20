@@ -23,7 +23,7 @@ export class HolidayComponent implements OnInit {
 
 
     this.roleName = localStorage.getItem('role')
-    console.log("Role name: " + this.roleName);
+   
     if (this.roleName === 'admin') {
       this.rolePlay = 'true';
     }
@@ -31,8 +31,9 @@ export class HolidayComponent implements OnInit {
       this.rolePlay = 'false';
     }
 
+    
     this.listService.getholiday().subscribe((res) => {
-      console.log(res);
+
       this.date=Object.values(res)[1]
       
       this.userList = res as User2[]

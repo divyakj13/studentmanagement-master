@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  per: string;
   userLogin = new User1(' ', ' ');
   public userList: User[] = [{
     _id: '',
@@ -31,16 +30,9 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  setPerson(username: string) {
-    this.per = username
-  }
-  getPerson() {
-    return this.per
-  }
 
   getname(name: string) {
     this.name = name;
-    console.log(name);
     return name
   }
 
@@ -51,10 +43,7 @@ export class LoginService {
   getRole(role: string) {
     this.Role = role;
   }
-  updateUser(user: User) {
-    const userIndex = this.userList.findIndex(x => x._id == user._id);
-    this.userList[userIndex] = user;
-  }
+
 
   public getUser() {
     return this.http.get(this.baseUrl);
